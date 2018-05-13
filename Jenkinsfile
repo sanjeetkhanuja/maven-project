@@ -8,8 +8,10 @@ pipeline {
 				sh 'mvn clean package'
             }
 			post {
-				echo 'Archiving'
-				archiveArtifacts artifacts: '**/target/*.war'
+				success {
+					echo 'Archiving'
+					archiveArtifacts artifacts: '**/target/*.war'
+				}	
 			}
         }
         stage('Test') {
