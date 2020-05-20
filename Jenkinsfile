@@ -14,10 +14,5 @@ pipeline {
 				}	
 			}
         }
-		stage('Deploy to DEV env') {
-			steps {
-				build job: 'deploy_to_DEV_env'
-			}
-		}		
     }
 }
